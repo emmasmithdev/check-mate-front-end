@@ -10,18 +10,24 @@ class MainContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      users: []
     }
     // binds go here
   }
 
-  componentDidMount() {
-    const url = 'http://localhost:8080/api/posts';
+  componentDidMount(){
+    const request = new Request();
+    const postsPromise = request.get('http://localhost:8080/api/posts')
+    const usersPromise = request.get('http://localhost:8080/api/users')
 
-    fetch(url)
-      .then(res => res.json())
-      .then(posts => this.setState({ posts: posts }))
-      .catch(err => console.error);
+    Promise.all([postsPromise, usersPromise])
+    .then((data) =>{
+      this.setState({
+        posts: data[0],
+        users: data[1]
+      })
+    })
   }
 
   render(){
