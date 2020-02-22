@@ -32,7 +32,6 @@ class MainContainer extends Component {
   render(){
     return(
       <Fragment>
-      <h1>CheckMate</h1>
       <NavBar />
       <PostList posts={this.state.posts}/>
       </Fragment>

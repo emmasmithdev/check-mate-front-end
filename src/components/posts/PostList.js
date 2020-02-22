@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Post from './Post';
 
 const PostList = (props) =>{
@@ -18,9 +18,12 @@ const PostList = (props) =>{
   })
 
   return(
-    <ul className="component-list">
-	    {posts}
-	  </ul>
+    <Fragment>
+      <h1 className="posts-title">CheckMate</h1>
+      <ul className="component-list">
+  	    {posts}
+  	  </ul>
+    </Fragment>
   )
 }
 export default PostList;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 const NavBar = (props) => {
   return (
-
       <ul className="navBar">
+      <li className="navLink">
+        <img className="logo" src="https://cdn3.iconfinder.com/data/icons/social-media-2115/512/27-512.png" alt="friend check logo"/>
+      </li>
         <li className="navLink">
           <a href="/">Home</a>
         </li>

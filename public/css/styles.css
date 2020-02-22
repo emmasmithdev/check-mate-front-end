@@ -9,6 +9,16 @@ ul {
   list-style-type: none;
 }
 
+img.logo {
+  height: 50px;
+  width: 50px;
+}
+
+h1.posts-title {
+  margin: auto;
+  width: 40%;
+}
+
 ul.navBar {
    margin: 0;
    padding: 0;
