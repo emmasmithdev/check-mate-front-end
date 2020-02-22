@@ -18,8 +18,8 @@ class MainContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    const postsPromise = request.get('http://localhost:8080/api/posts')
-    const usersPromise = request.get('http://localhost:8080/api/users')
+    const postsPromise = request.get('/api/posts')
+    const usersPromise = request.get('/api/users')
 
     Promise.all([postsPromise, usersPromise])
     .then((data) => {
