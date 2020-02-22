@@ -1,0 +1,19 @@
+.component {
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+ul.component-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.component-item {
+  display: inline;
+}
+
+.navLink {
+    text-align: left;
+}

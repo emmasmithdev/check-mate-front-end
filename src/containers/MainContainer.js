@@ -1,8 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
-// import PostList from '../components/posts/PostList';
+import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
 // import CheckList from '../components/checks/CheckList';
 
@@ -35,19 +34,8 @@ class MainContainer extends Component {
       <Fragment>
       <h1>CheckMate</h1>
       <NavBar />
+      <PostList posts={this.state.posts}/>
       </Fragment>
-      // <Router>
-      // <Fragment>
-      // <NavBar/>
-      // <Route render={(props) => {
-      //   return <PostList posts={this.state.posts}/>
-      // }} />
-      // <Route render={(props) => {
-      //   return <CheckList users={this.state.users}/>
-      // }} />
-      //
-      // </Fragment>
-      // </Router>
     )
   }
 }
