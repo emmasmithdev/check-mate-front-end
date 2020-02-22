@@ -18,6 +18,8 @@
     "eject": "react-scripts eject"
   },
 
+	"proxy": "http://localhost:8080",
+
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -31,7 +33,9 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
+      
+    ]
+
   }
   "proxy": "http://localhost:8181"
 }
