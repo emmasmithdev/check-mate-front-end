@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-// import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
-import Request from '../helpers/request';
+import Request from '../helpers/request.js';
 // import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
 // import CheckList from '../components/checks/CheckList';
@@ -22,7 +22,7 @@ class MainContainer extends Component {
     const usersPromise = request.get('http://localhost:8080/api/users')
 
     Promise.all([postsPromise, usersPromise])
-    .then((data) =>{
+    .then((data) => {
       this.setState({
         posts: data[0],
         users: data[1]
