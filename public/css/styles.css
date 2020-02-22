@@ -5,9 +5,25 @@
   border: 1px solid black;
 }
 
+ul {
+  list-style-type: none;
+}
+
+ul.navBar {
+   margin: 0;
+   padding: 0;
+   width: 20%;
+   background-color: #7FFFD4;
+   height: 100%;
+   position: fixed; /* Make it stick, even on scroll */
+   overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
 ul.component-list {
   display: flex;
   flex-wrap: wrap;
+  width: 40%;
+  margin: auto;
 }
 
 li.component-item {
@@ -15,5 +31,7 @@ li.component-item {
 }
 
 .navLink {
-    text-align: left;
+    text-align: center;
+    padding: 10px;
+    border: 5px;
 }

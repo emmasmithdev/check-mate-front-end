@@ -5,13 +5,6 @@ const ReactionList = (props) => {
     return "Loading..."
   }
 
-  // const reactions = props.reactions.map((reaction) => {
-  //   return (
-  //     <p>{reaction}</p>
-  //   )
-  // })
-
-
   return (
     <p>{props.reactions}</p>
   )
