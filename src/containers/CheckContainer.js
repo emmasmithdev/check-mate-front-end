@@ -1,6 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import CheckList from '../components/checks/CheckList';
+import UserList from '../components/checks/UserList';
+import SendCheck from '../components/checks/SendCheck';
 import Request from '../helpers/request';
 
 class CheckContainer extends Component {
@@ -10,6 +12,7 @@ class CheckContainer extends Component {
 			checks: [],
 			users: []
 		}
+		this.findUserById = this.findUserById.bind(this);
   }
 
 	componentDidMount(){
@@ -29,12 +32,26 @@ class CheckContainer extends Component {
 
   }
 
+	findUserById(id) {
+		return this.state.users.find(user => {
+			return user.id === parseInt(id);
+		});
+	}
+
   render(){
     return(
       <Router>
         <Fragment>
           <Switch>
-          <Route render={(props) => {
+					<Route exact path="/checks/send" render={(props) => {
+						return <UserList users={this.state.users}/>
+					}} />
+					<Route exact path="/checks/send/:id" render={(props) => {
+						const id = props.match.params.id;
+						const user = this.findUserById(id);
+						return <SendCheck user={user} />
+					}} />
+          <Route exact path="/checks" render={(props) => {
             return <CheckList checks={this.state.checks} users={this.state.users}/>
         }} />
           </Switch>

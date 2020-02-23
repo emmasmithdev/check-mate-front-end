@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import User from './User';
+import CheckUser from './CheckUser';
 
 const Check = (props) =>{
 	if(!props.check) {
@@ -10,9 +10,9 @@ const Check = (props) =>{
   return(
 		<Fragment>
     <p>
-    <User user={props.check.author} userList={props.users} />
+    Name: <CheckUser user={props.check.author} userList={props.users} />
     </p>
-    <p>Sent To: <User user={props.check.recipient.id} userList={props.users}/></p>
+    <p>Sent To: <CheckUser user={props.check.recipient.id} userList={props.users}/></p>
     <p>Message: {props.check.initialCheck}</p>
     </Fragment>
   )

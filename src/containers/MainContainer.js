@@ -38,7 +38,7 @@ class MainContainer extends Component {
 			<h1>CheckMate</h1>
       <NavBar/>
 			<Switch>
-				<Route path="/checks" component={CheckContainer} />
+				<Route exact path="/checks" component={CheckContainer} />
 			</Switch>
       </Fragment>
       </Router>
