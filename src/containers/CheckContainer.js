@@ -7,17 +7,26 @@ class CheckContainer extends Component {
   constructor(props){
     super(props);
 		this.state = {
-			checks: []
+			checks: [],
+			users: []
 		}
   }
 
 	componentDidMount(){
     const request = new Request();
 
-    request.get('/api/checks')
-    .then((data) => {
-      this.setState({ checks: data })
-    })
+		const checksPromise = request.get('/api/checks');
+		const usersPromise = request.get('/api/users');
+
+		Promise.all([checksPromise, usersPromise])
+		.then((data) => {
+			this.setState({
+				checks: data[0],
+				users: data[1]
+			})
+		})
+		.catch(err => console.log(err));
+
   }
 
   render(){
@@ -26,7 +35,7 @@ class CheckContainer extends Component {
         <Fragment>
           <Switch>
           <Route render={(props) => {
-            return <CheckList checks={this.state.checks}/>
+            return <CheckList checks={this.state.checks} users={this.state.users}/>
         }} />
           </Switch>
         </Fragment>

@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React from 'react';
 import Check from './Check';
 
 const CheckList = (props) =>{
@@ -12,7 +12,7 @@ const CheckList = (props) =>{
 		return(
 			<li key={index} className="component-item">
 			<div className="component">
-			<Check check={check}/>
+			<Check check={check} users={props.users}/>
 			</div>
 			</li>
 		)
