@@ -37,8 +37,10 @@ class MainContainer extends Component {
       <Fragment>
       <NavBar />
       <h1>CheckMate</h1>
-      <PostList posts={this.state.posts}/>
 			<Switch>
+      <Route exact path="/" render={(props) => {
+        return <PostList posts={this.state.posts}/>
+        }} />
 				<Route exact path="/checks" component={CheckContainer} />
 			</Switch>
       </Fragment>
