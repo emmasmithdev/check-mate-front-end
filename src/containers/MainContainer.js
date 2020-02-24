@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';

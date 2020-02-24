@@ -19,7 +19,6 @@ const PostList = (props) =>{
 
   return(
     <Fragment>
-      <h1 className="posts-title">CheckMate</h1>
       <ul className="component-list">
   	    {posts}
   	  </ul>
