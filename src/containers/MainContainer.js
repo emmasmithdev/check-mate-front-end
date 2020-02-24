@@ -3,7 +3,8 @@ import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
-// import CheckList from '../components/checks/CheckList';
+//import CheckList from '../components/checks/CheckList';
+import CheckContainer from './CheckContainer';
 
 class MainContainer extends Component {
   constructor(props){
@@ -31,10 +32,16 @@ class MainContainer extends Component {
 
   render(){
     return(
+      <Router>
       <Fragment>
       <NavBar />
+      <h1>CheckMate</h1>
       <PostList posts={this.state.posts}/>
+			<Switch>
+				<Route exact path="/checks" component={CheckContainer} />
+			</Switch>
       </Fragment>
+      </Router>
     )
   }
 }
