@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../../helpers/request';
 
-class SendCheck extends Component {
+class ReplyCheck extends Component {
   constructor(props){
     super(props);
 		this.state={
@@ -16,9 +16,9 @@ class SendCheck extends Component {
 
 	componentDidMount(){
 		const request = new Request();
-		const checkAsksPromise = request.get('/api/checks/checkask');
+		const checkAnsPromise = request.get('/api/received_checks/check_ans');
 		const usersPromise = request.get('/api/users');
-		Promise.all([checkAsksPromise, usersPromise])
+		Promise.all([checkAnsPromise, usersPromise])
 		.then((data) => {
 			this.setState({
 				checks: Object.entries(data[0]),
@@ -41,7 +41,7 @@ class SendCheck extends Component {
 			message: {
 				"author": this.findUserById(this.props.user.id),
 				"recipient": this.findUserById(this.props.user.id),
-				"initialCheck": selectedMessage
+				"reply": selectedMessage
 			}
 		})
 	}
@@ -68,11 +68,11 @@ class SendCheck extends Component {
 			{messageOptions}
 			</select>
 			<br />
-			<button type="submit">Send!</button>
+			<button type="submit">Reply!</button>
 			</form>
 			</div>
 		)
 	}
 }
 
-export default SendCheck;
+export default ReplyCheck;
