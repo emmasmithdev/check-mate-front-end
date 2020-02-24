@@ -4,7 +4,8 @@ import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 // import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
-// import CheckList from '../components/checks/CheckList';
+//import CheckList from '../components/checks/CheckList';
+import CheckContainer from './CheckContainer';
 
 class MainContainer extends Component {
   constructor(props){
@@ -32,22 +33,15 @@ class MainContainer extends Component {
 
   render(){
     return(
+      <Router>
       <Fragment>
-      <h1>CheckMate</h1>
-      <NavBar />
+			<h1>CheckMate</h1>
+      <NavBar/>
+			<Switch>
+				<Route exact path="/checks" component={CheckContainer} />
+			</Switch>
       </Fragment>
-      // <Router>
-      // <Fragment>
-      // <NavBar/>
-      // <Route render={(props) => {
-      //   return <PostList posts={this.state.posts}/>
-      // }} />
-      // <Route render={(props) => {
-      //   return <CheckList users={this.state.users}/>
-      // }} />
-      //
-      // </Fragment>
-      // </Router>
+      </Router>
     )
   }
 }

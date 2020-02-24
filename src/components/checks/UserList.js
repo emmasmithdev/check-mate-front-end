@@ -1,19 +1,19 @@
 import React, { Fragment } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import Check from './Check';
+import User from './User';
 
-const CheckList = (props) =>{
-	if(props.checks.length === 0) {
+const UserList = (props) =>{
+	if(props.users.length === 0) {
 		return(
 			<p>Loading ... </p>
 		)
 	}
 
-	const listOfChecks = props.checks.map((check, index) => {
+	const listOfUsers = props.users.map((user, index) => {
 		return(
 			<li key={index} className="component-item">
 			<div className="component">
-			<Check check={check} users={props.users}/>
+			<User user={user}/>
 			</div>
 			</li>
 		)
@@ -21,10 +21,9 @@ const CheckList = (props) =>{
   return(
 		<Fragment>
 		<ul className="component-list">
-			{listOfChecks}
+			{listOfUsers}
 		</ul>
-		<Link to="/checks/send"><button type="button">Send A Check</button></Link>
 		</Fragment>
   )
 }
-export default CheckList;
+export default UserList;
