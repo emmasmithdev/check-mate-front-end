@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
-import PostList from '../components/posts/PostList';
+// import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
 //import CheckList from '../components/checks/CheckList';
 import CheckContainer from './CheckContainer';
@@ -13,7 +13,8 @@ class MainContainer extends Component {
     super(props);
     this.state = {
       posts: [],
-      users: []
+      users: [],
+      comments: []
     }
     // binds go here
   }
@@ -22,15 +23,18 @@ class MainContainer extends Component {
     const request = new Request();
     const postsPromise = request.get('/api/posts')
     const usersPromise = request.get('/api/users')
+    const commentsPromise = request.get('/api/comments')
 
-    Promise.all([postsPromise, usersPromise])
+    Promise.all([postsPromise, usersPromise, commentsPromise])
     .then((data) => {
       this.setState({
         posts: data[0],
-        users: data[1]
+        users: data[1],
+        comments: data[2]
       })
     })
   }
+
 
   render(){
     return(
@@ -39,7 +43,9 @@ class MainContainer extends Component {
       <NavBar />
       <h1>CheckMate</h1>
 			<Switch>
-        // <Route exact path="/posts" component={PostList} />}
+      <Route exact path="/" render={(props) => {
+        return <PostList posts={this.state.posts} comments={this.state.comments}/>
+        }} />
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
 			</Switch>
@@ -49,3 +55,8 @@ class MainContainer extends Component {
   }
 }
 export default MainContainer;
+
+
+// <Route exact path="/" render={(props) => {
+// 	return <PostList posts={this.state.posts}/>
+// 	}} />

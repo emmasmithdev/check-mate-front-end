@@ -2,7 +2,6 @@
   margin: 20px;
   padding: 10px;
   width: 300px;
-  border: 1px solid black;
 }
 
 ul {
@@ -44,4 +43,66 @@ li.component-item {
     text-align: center;
     padding: 10px;
     border: 5px;
+}
+
+.postContents{
+  display: flex;
+  margin-bottom: 0px;
+}
+
+p.userName {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 10px;
+  width: 70px;
+  margin-bottom: 0px;
+}
+
+p.content {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 210px;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+p.date {
+  border: 1px solid black;
+  font-size: 10px;
+  margin: 0px;
+}
+p.reactions {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: 10px;
+  margin: 0px;
+}
+
+.commentContent {
+  display: flex;
+  margin-bottom: 0px;
+}
+p.commenter {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding 5px;
+  width: 70px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  margin-top: 0px;
+}
+p.comment {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 210px;
+  padding: 10px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  margin-top: 0px;
+}
+.postInput {
+  width: 300px;
+  height: 70px;
 }
