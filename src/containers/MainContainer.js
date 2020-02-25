@@ -39,9 +39,6 @@ class MainContainer extends Component {
       <NavBar />
       <h1>CheckMate</h1>
 			<Switch>
-      <Route exact path="/" render={(props) => {
-        return <PostList posts={this.state.posts}/>
-        }} />
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
 			</Switch>
