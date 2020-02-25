@@ -1,2 +1,2 @@
-import React, {Fragment} from 'react';
-import NewsItem from './NewsItem';
+// import React, {Fragment} from 'react';
+// import NewsItem from './NewsItem';
