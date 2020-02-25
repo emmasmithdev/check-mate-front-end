@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 class UserLoginForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: '',
       password: '',
