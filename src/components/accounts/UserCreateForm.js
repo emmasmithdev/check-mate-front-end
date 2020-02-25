@@ -11,6 +11,26 @@ class UserCreateForm extends Component {
       mood: ""
     }
   }
+
+  render() {
+    return(
+      <div>
+        <form action="">
+          <label>Name: </label>
+          <input type="text"/>
+          <label>Username: </label>
+          <input type="text"/>
+          <label>Password: </label>
+          <input type="text"/>
+          <label>Upload a Picture: </label>
+          <input type="text"/>
+          <label>How are you feeling? </label>
+          <input type="text"/>
+        </form>
+      </div>
+    )
+  }
+
 }
 
 export default UserCreateForm;

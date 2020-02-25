@@ -36,9 +36,9 @@ class UserLoginForm extends Component {
   render() {
     <div>
       <form onSubmit={this.handleSubmit}>
-      <label >Username: </label>
+      <label>Username: </label>
       <input type="text" value={this.state.username} onChange={this.handleUsername}/>
-      <label >Password: </label>
+      <label>Password: </label>
       <input type="text" value={this.state.password} onChange={this.handlePassword}/>
       <input type="submit" value="Submit"/>
       </form>
