@@ -12,23 +12,59 @@ class UserCreateForm extends Component {
     }
   }
 
+  handleName(event) {
+    this.setState({name: event.target.value})
+  }
+
+  handleUsername(event) {
+    this.setState({username: event.target.value})
+  }
+
+  handlePassword(event) {
+    this.setState({password: event.target.value})
+  }
+
+  handleProfilePicture(event) {
+    this.setState({profilePicture: event.target.value})
+  }
+
+  handleMood(event) {
+    this.setState({mood: event.target.value})
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      username: this.state.username,
+      password: this.state.password,
+      profilePicture: this.state.profilePicture,
+      mood: this.state.mood
+    }
+    this.props.onPost(newUser)
+  }
+
   render() {
+
     return(
       <div>
-        <form action="">
+        <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
-          <input type="text"/>
+          <input type="text" name="" onChange={this.handleName}/>
           <label>Username: </label>
-          <input type="text"/>
+          <input type="text" name="" onChange={this.handleUsername}/>
           <label>Password: </label>
-          <input type="text"/>
+          <input type="text" name="" onChange={this.handlePassword}/>
           <label>Upload a Picture: </label>
-          <input type="text"/>
+          <input type="text" name="" onChange={this.handleProfilePicture}/>
+          // TODO: Drop down for mood enum?
           <label>How are you feeling? </label>
-          <input type="text"/>
+          <input type="text" name="" onChange={this.handleMood}/>
+          <button type="submit">Create Account</button>
         </form>
       </div>
     )
+
   }
 
 }
