@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import User from './User';
 
 const UserList = (props) =>{

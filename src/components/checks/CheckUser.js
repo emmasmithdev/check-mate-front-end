@@ -1,6 +1,3 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-
 const CheckUser = (props) =>{
 	if(!props.userList) {
 		return (
