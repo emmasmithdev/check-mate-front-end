@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';
+// import NewsList from '../components/news/NewsList';
+//import CheckList from '../components/checks/CheckList';
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
 
@@ -18,8 +20,8 @@ class MainContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    const postsPromise = request.get('/api/posts');
-    const usersPromise = request.get('/api/users');
+    const postsPromise = request.get('/api/posts')
+    const usersPromise = request.get('/api/users')
 
     Promise.all([postsPromise, usersPromise])
     .then((data) => {
@@ -28,7 +30,6 @@ class MainContainer extends Component {
         users: data[1]
       })
     })
-    .catch(err => console.log(err));
   }
 
   render(){
