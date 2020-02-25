@@ -3,8 +3,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';
-// import NewsList from '../components/news/NewsList';
-//import CheckList from '../components/checks/CheckList';
 import CheckContainer from './CheckContainer';
 
 class MainContainer extends Component {

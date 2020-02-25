@@ -15,6 +15,10 @@ class NewsContainer extends Component {
   componentDidMount() {
     const request = new Request();
 
+    // limited API call to 3 results for brevity
+    // can change 'pageSize=' and 'q=' for different results
+    // contextualwebsearch via rapidapi.com
+    // TODO: Add option for user to customise results
     const newsPromise = request.get('https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/NewsSearchAPI?autoCorrect=false&pageNumber=1&pageSize=3&q=inspiring&safeSearch=true')
 
     Promise.all([newsPromise])
