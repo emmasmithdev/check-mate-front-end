@@ -15,12 +15,13 @@ class NewsContainer extends Component {
   componentDidMount() {
     const request = new Request();
 
-    const newsPromise = request.getFromExternal('https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/NewsSearchAPI?autoCorrect=false&pageNumber=1&pageSize=10&q=Taylor%20Swift&safeSearch=true');
+    const newsPromise = request.get('http://localhost:4040/news');
 
     Promise.all([newsPromise])
     .then((data) => {
+      const filterNews = Object.entries(data[0]);
       this.setState({
-        news: data[0]
+        news: filterNews[4][1]
       })
     })
     .catch(err => console.log(err));
@@ -31,7 +32,7 @@ class NewsContainer extends Component {
       <Router>
       <Fragment>
       <Switch>
-      <Router exact path="/news" render={(props) => {
+      <Route exact path="/news" render={(props) => {
         return <NewsList news={this.state.news}/>
       }}/>
       </Switch>
