@@ -6,7 +6,10 @@ const Comment = (props) => {
   }
 
   return (
-    <p>{props.comment.content}</p>
+    <div className="commentContent">
+      <p className="commenter">{props.comment.user.name}</p>
+      <p className="comment">{props.comment.content}</p>
+    </div>
   )
 }
 export default Comment;

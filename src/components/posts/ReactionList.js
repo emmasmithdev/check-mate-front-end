@@ -6,7 +6,7 @@ const ReactionList = (props) => {
   }
 
   return (
-    <p>{props.reactions}</p>
+    <p className="reactions">{props.reactions}</p>
   )
 }
 export default ReactionList;

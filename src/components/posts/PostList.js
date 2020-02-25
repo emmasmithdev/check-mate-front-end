@@ -1,28 +1,42 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, Component} from 'react';
 import Post from './Post';
+import CreatePostForm from './CreatePostForm';
+import Request from '../../helpers/request';
 
-const PostList = (props) =>{
+class PostList extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      posts: []
+    }
+  }
 
-  if (props.posts.length === 0){
-	  return (<p>Loading...</p>)
-	}
+  handlePost(post){
+    const request = new Request();
+    request.post("/api/posts", post)
+    .then(() => window.location = '/')
+  }
 
-  const posts = props.posts.map((post, index) => {
-    return (
-      <li key={index} className="component-item">
-        <div  className="component">
-          <Post post={post}/>
-        </div>
-      </li>
-    )
-  })
+  render(){
+
+    const posts = this.props.posts.map((post, index) => {
+      return (
+        <li key={index} className="component-item">
+          <div  className="component">
+            <Post post={post}/>
+          </div>
+        </li>
+      )
+    })
 
   return(
     <Fragment>
       <ul className="component-list">
+        <CreatePostForm posts ={posts} onPost={this.handlePost}/>
   	    {posts}
   	  </ul>
     </Fragment>
   )
+}
 }
 export default PostList;
