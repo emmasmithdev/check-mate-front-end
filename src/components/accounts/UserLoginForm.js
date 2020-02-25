@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AuthService from './AuthService';
 
 class UserLoginForm extends Component {
   constructor(props) {
@@ -36,18 +37,28 @@ class UserLoginForm extends Component {
     if (!this.state.password) {
       console.log("Error: password required");
     }
+
+		const auth = new AuthService();
+
+		auth.verifyUser(this.state.username, this.state.password)
+		.then(() => {
+			window.location = "/home";
+		})
+		.catch(err => console.log(err));
   }
 
   render() {
-    <div>
-      <form onSubmit={this.handleSubmit}>
-      <label>Username: </label>
-      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
-      <label>Password: </label>
-      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
-      <input type="submit" value="Submit"/>
-      </form>
-    </div>
+    return (
+			<div>
+	      <form onSubmit={this.handleSubmit}>
+	      <label>Username: </label>
+	      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
+	      <label>Password: </label>
+	      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
+	      <input type="submit" value="Submit"/>
+	      </form>
+	    </div>
+		)
   }
 
 }
