@@ -42,6 +42,7 @@ class MainContainer extends Component {
         return <PostList posts={this.state.posts}/>
         }} />
 				<Route exact path="/checks" component={CheckContainer} />
+        <Route exact path="/news" component={NewsContainer} />
 			</Switch>
       </Fragment>
       </Router>
