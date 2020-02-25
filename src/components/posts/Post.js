@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-// import Comment from './Comment';
+import Comment from './Comment';
 import ReactionList from './ReactionList';
 
 const Post = (props) => {
@@ -7,15 +7,17 @@ const Post = (props) => {
   return "Loading..."
 }
 
-// const comments = props.post.comments.map((comment, index) => {
-//   return (
-//     <li key={index} className="comment-item">
-//       <div  className="comment">
-//         <Comment comment={comment}/>
-//       </div>
-//     </li>
-//   )
-// })
+const comments = props.comments.map((comment, index) => {
+  if (comment.postId === props.post.id){
+  return (
+    <li key={index} className="comment-item">
+      <div  className="comment">
+        <Comment comment={comment}/>
+      </div>
+    </li>
+  )
+}
+})
 
   return (
     <Fragment>
@@ -25,6 +27,7 @@ const Post = (props) => {
     </div>
       <p className="date">{props.post.date}</p>
       <ReactionList reactions={props.post.reactions}/>
+      {comments}
     </Fragment>
   )
 }

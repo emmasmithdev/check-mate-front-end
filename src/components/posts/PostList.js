@@ -23,7 +23,7 @@ class PostList extends Component {
       return (
         <li key={index} className="component-item">
           <div  className="component">
-            <Post post={post}/>
+            <Post post={post} comments={this.props.comments}/>
           </div>
         </li>
       )

@@ -13,7 +13,8 @@ class MainContainer extends Component {
     super(props);
     this.state = {
       posts: [],
-      users: []
+      users: [],
+      comments: []
     }
     // binds go here
   }
@@ -22,12 +23,14 @@ class MainContainer extends Component {
     const request = new Request();
     const postsPromise = request.get('/api/posts')
     const usersPromise = request.get('/api/users')
+    const commentsPromise = request.get('/api/comments')
 
-    Promise.all([postsPromise, usersPromise])
+    Promise.all([postsPromise, usersPromise, commentsPromise])
     .then((data) => {
       this.setState({
         posts: data[0],
-        users: data[1]
+        users: data[1],
+        comments: data[2]
       })
     })
   }
@@ -41,7 +44,7 @@ class MainContainer extends Component {
       <h1>CheckMate</h1>
 			<Switch>
       <Route exact path="/" render={(props) => {
-        return <PostList posts={this.state.posts}/>
+        return <PostList posts={this.state.posts} comments={this.state.comments}/>
         }} />
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
