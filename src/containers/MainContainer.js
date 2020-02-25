@@ -6,6 +6,7 @@ import PostList from '../components/posts/PostList';
 // import NewsList from '../components/news/NewsList';
 //import CheckList from '../components/checks/CheckList';
 import CheckContainer from './CheckContainer';
+import NewsContainer from './NewsContainer';
 
 class MainContainer extends Component {
   constructor(props){
@@ -43,6 +44,7 @@ class MainContainer extends Component {
         return <PostList posts={this.state.posts}/>
         }} />
 				<Route exact path="/checks" component={CheckContainer} />
+        <Route exact path="/news" component={NewsContainer} />
 			</Switch>
       </Fragment>
       </Router>
