@@ -21,9 +21,21 @@ class LoginPage extends Component {
     })
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+
+    if (!this.state.username) {
+      console.log("Error: username required");
+    }
+
+    if (!this.state.password) {
+      console.log("Error: password required");
+    }
+  }
+
   render() {
     <div>
-      <form action="">
+      <form onSubmit={this.handleSubmit}>
       <label >Username: </label>
       <input type="text" value={this.state.username} onChange={this.handleUsername}/>
       <label >Password: </label>
