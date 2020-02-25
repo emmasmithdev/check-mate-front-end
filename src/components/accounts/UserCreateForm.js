@@ -10,6 +10,13 @@ class UserCreateForm extends Component {
       profilePicture: "",
       mood: ""
     }
+
+    this.handleName = this.handleName.bind(this);
+    this.handleUsername = this.handleUsername.bind(this);
+    this.handlePassword = this.Password.bind(this);
+    this.handleProfilePicture = this.handleProfilePicture.bind(this);
+    this.handleMood = this.handleMood.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleName(event) {

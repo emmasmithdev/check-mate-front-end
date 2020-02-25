@@ -7,6 +7,11 @@ class UserLoginForm extends Component {
       username: '',
       password: '',
     }
+
+    this.handleUsername = this.handleUsername.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleUsername(event) {
