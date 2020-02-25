@@ -1,0 +1,108 @@
+.component {
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img.logo {
+  height: 50px;
+  width: 50px;
+}
+
+h1.posts-title {
+  margin: auto;
+  width: 40%;
+}
+
+ul.navBar {
+   margin: 0;
+   padding: 0;
+   width: 20%;
+   background-color: #7FFFD4;
+   height: 100%;
+   position: fixed; /* Make it stick, even on scroll */
+   overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+ul.component-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: auto;
+}
+
+li.component-item {
+  display: inline;
+}
+
+.navLink {
+    text-align: center;
+    padding: 10px;
+    border: 5px;
+}
+
+.postContents{
+  display: flex;
+  margin-bottom: 0px;
+}
+
+p.userName {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 10px;
+  width: 70px;
+  margin-bottom: 0px;
+}
+
+p.content {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 210px;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+p.date {
+  border: 1px solid black;
+  font-size: 10px;
+  margin: 0px;
+}
+p.reactions {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: 10px;
+  margin: 0px;
+}
+
+.commentContent {
+  display: flex;
+  margin-bottom: 0px;
+}
+p.commenter {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding 5px;
+  width: 70px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  margin-top: 0px;
+}
+p.comment {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 210px;
+  padding: 10px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  margin-top: 0px;
+}
+.postInput {
+  width: 300px;
+  height: 70px;
+}

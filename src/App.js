@@ -1,10 +1,12 @@
 import React from 'react';
+
 import './App.css';
+import UserContainer from './containers/UserContainer'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <UserContainer />
     </div>
   );
 }
