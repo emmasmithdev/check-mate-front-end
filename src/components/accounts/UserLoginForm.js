@@ -7,6 +7,7 @@ class UserLoginForm extends Component {
     this.state = {
       username: '',
       password: '',
+			loginFailed: false
     }
 
     this.handleUsername = this.handleUsername.bind(this);
@@ -41,8 +42,15 @@ class UserLoginForm extends Component {
 		const auth = new AuthService();
 
 		auth.verifyUser(this.state.username, this.state.password)
-		.then(() => {
-			window.location = "/home";
+		.then((res) => {
+			if(res.status === 401) {
+					this.setState({
+						loginFailed: true
+					})
+			}
+			else if (res.status === 200) {
+				window.location = "/home"
+			}
 		})
 		.catch(err => console.log(err));
   }
@@ -57,6 +65,7 @@ class UserLoginForm extends Component {
 	      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
 	      <input type="submit" value="Submit"/>
 	      </form>
+				{this.state.loginFailed && <div>Incorrect password or username!</div>}
 	    </div>
 		)
   }

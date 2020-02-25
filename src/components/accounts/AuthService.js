@@ -1,9 +1,11 @@
 class AuthService {
 
 	verifyUser(username, password) {
-		return fetch('/api/basicauth', {
+		return fetch('/api/login_auth', {
 			method: "GET",
-			headers: { authorization: this.createAuthToken(username, password)}
+			headers: {
+				authorization: this.createAuthToken(username, password)
+			}
 		})
 	}
 
