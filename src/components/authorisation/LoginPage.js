@@ -8,6 +8,16 @@ class LoginPage extends Component {
       password: '',
     }
   }
+
+  render() {
+    <div>
+      <form action="">
+      <label >Username: </label>
+      <label >Password: </label>
+      </form>
+    </div>
+  }
+
 }
 
 export default LoginPage;
