@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AuthService from './AuthService';
 
 class UserLoginForm extends Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class UserLoginForm extends Component {
     this.state = {
       username: '',
       password: '',
+			loginFailed: false
     }
 
     this.handleUsername = this.handleUsername.bind(this);
@@ -36,18 +38,36 @@ class UserLoginForm extends Component {
     if (!this.state.password) {
       console.log("Error: password required");
     }
+
+		const auth = new AuthService();
+
+		auth.verifyUser(this.state.username, this.state.password)
+		.then((res) => {
+			if(res.status === 401) {
+					this.setState({
+						loginFailed: true
+					})
+			}
+			else if (res.status === 200) {
+				window.location = "/home"
+			}
+		})
+		.catch(err => console.log(err));
   }
 
   render() {
-    <div>
-      <form onSubmit={this.handleSubmit}>
-      <label>Username: </label>
-      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
-      <label>Password: </label>
-      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
-      <input type="submit" value="Submit"/>
-      </form>
-    </div>
+    return (
+			<div>
+	      <form onSubmit={this.handleSubmit}>
+	      <label>Username: </label>
+	      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
+	      <label>Password: </label>
+	      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
+	      <input type="submit" value="Submit"/>
+	      </form>
+				{this.state.loginFailed && <div>Incorrect password or username!</div>}
+	    </div>
+		)
   }
 
 }

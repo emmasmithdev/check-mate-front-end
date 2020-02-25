@@ -35,7 +35,7 @@ class NewsContainer extends Component {
       <Router>
       <Fragment>
       <Switch>
-      <Router exact path="/news" render={(props) => {
+      <Route exact path="/news" render={(props) => {
         return <NewsList news={this.state.news}/>
       }}/>
       </Switch>
