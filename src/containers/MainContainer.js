@@ -39,6 +39,7 @@ class MainContainer extends Component {
       <NavBar />
       <h1>CheckMate</h1>
 			<Switch>
+        // <Route exact path="/posts" component={PostList} />}
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
 			</Switch>
