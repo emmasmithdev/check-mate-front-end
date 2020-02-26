@@ -10,7 +10,7 @@ class Profile extends Component {
       </div>
       </Fragment>
     )
-    }
+  }
 
 }
 
