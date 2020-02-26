@@ -41,14 +41,14 @@ class MainContainer extends Component {
     return(
       <Router>
       <Fragment>
-      <NavBar />
+      <NavBar user={this.state.user}/>
       <h1  className="welcome">Checkmate</h1>
 			<Switch>
       <Route exact path="/home/:user" render={(props) => {
         return <PostList posts={this.state.posts} comments={this.state.comments} users={this.state.users}/>
         }} />
         <Route exact path="/groups" component={GroupList} />
-				<Route exact path="/checks" component={CheckContainer} />
+				<Route exact path="/checks/:user" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
         <Route exact path="/profile" component={Profile} />
 			</Switch>

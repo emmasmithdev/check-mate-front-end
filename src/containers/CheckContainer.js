@@ -12,7 +12,8 @@ class CheckContainer extends Component {
     super(props);
 		this.state = {
 			checks: [],
-			users: []
+			users: [],
+			user: this.props.match.params.user
 		}
 		this.findUserById = this.findUserById.bind(this);
 		this.handlePost = this.handlePost.bind(this);
@@ -77,8 +78,8 @@ class CheckContainer extends Component {
 						const user = this.findUserById(id);
 						return <SendCheck user={user} onFormSubmit={this.handlePost}/>
 					}} />
-          <Route exact path="/checks" render={(props) => {
-            return <CheckList checks={this.state.checks} users={this.state.users} />
+          <Route exact path="/checks/:user" render={(props) => {
+            return <CheckList checks={this.state.checks} users={this.state.users} user={this.state.user}/>
         }} />
           </Switch>
         </Fragment>

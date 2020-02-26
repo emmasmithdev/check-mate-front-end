@@ -71,7 +71,7 @@ class UserContainer extends Component {
             return <UserCreateForm onPost={this.handlePost}/>
           }} />
 					<Route exact path="/home/:user" component={MainContainer}/>
-					<Route exact path="/checks" component={CheckContainer} />
+					<Route exact path="/checks/:user" component={CheckContainer} />
 	        <Route exact path="/news" component={NewsContainer} />
           </Switch>
         </Fragment>

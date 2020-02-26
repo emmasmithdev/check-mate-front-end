@@ -11,11 +11,15 @@ const CheckList = (props) =>{
 
 	const listOfChecks = props.checks.map((check, index) => {
 		return(
-			<li key={index} className="component-item">
-			<div className="component">
-			<Check check={check} users={props.users}/>
-			</div>
-			</li>
+		<div>
+		{check.recipient === parseInt(props.user) &&
+		<li key={index} className="component-item">
+		<div className="component">
+		<Check check={check} users={props.users}/>
+		</div>
+		</li>
+	}
+		</div>
 		)
 	});
   return(
