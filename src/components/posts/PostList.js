@@ -14,7 +14,7 @@ class PostList extends Component {
   handlePost(post){
     const request = new Request();
     request.post("/api/posts", post)
-    .then(() => window.location = '/')
+    .then(() => window.location = '/home')
   }
 
   render(){
@@ -23,7 +23,7 @@ class PostList extends Component {
       return (
         <li key={index} className="component-item">
           <div  className="component">
-            <Post post={post} comments={this.props.comments}/>
+            <Post post={post} comments={this.props.comments} users={this.props.users}/>
           </div>
         </li>
       )

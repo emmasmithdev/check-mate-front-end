@@ -62,6 +62,8 @@ class UserCreateForm extends Component {
           <input type="password" name="" onChange={this.handlePassword}/>
           <label>Upload a Picture: </label>
           <input type="text" name="" onChange={this.handleProfilePicture}/>
+          <label>How are you feeling? </label>
+          <input type="text" name="" onChange={this.handleMood}/>
           <button type="submit">Create Account</button>
         </form>
       </div>

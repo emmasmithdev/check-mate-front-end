@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NewsList from '../components/news/NewsList.js';
 import Request from '../helpers/request';
+import NavBar from '../NavBar.js';
 
 class NewsContainer extends Component {
 
@@ -31,6 +32,7 @@ class NewsContainer extends Component {
     return(
       <Router>
       <Fragment>
+      <NavBar />
       <Switch>
       <Route exact path="/news" render={(props) => {
         return <NewsList news={this.state.news}/>

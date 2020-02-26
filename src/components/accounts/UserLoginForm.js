@@ -58,18 +58,21 @@ class UserLoginForm extends Component {
 
   render() {
     return (
-			<div>
+			<div className="login">
+      <p className="welcome">Checkmate</p>
+      <img src="../images/panda2.png" alt="panda pic" className="panda"/>
 	      <form onSubmit={this.handleSubmit}>
-	      <label>Username: </label>
-	      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
-				<br />
-				<label>Password: </label>
-	      <input type="password" value={this.state.password} onChange={this.handlePassword}/>
-				<br />
-				<input type="submit" value="Submit"/>
+	      <label className="loginLabel">Username: </label>
+	      <input type="text" value={this.state.username} onChange={this.handleUsername} className="inputBox"/>
+        <br/>
+	      <label className="loginLabel">Password: </label>
+	      <input type="text" value={this.state.password} onChange={this.handlePassword} className="inputBox"/>
+        <br/>
+	      <input type="submit" value="Submit" className="submit"/>
 	      </form>
 				<Link to="/register"><button type="button">Register</button></Link>
 				{this.state.loginFailed && <div>Incorrect password or username!</div>}
+        <a href="/register">Create Account</a>
 	    </div>
 		)
   }
