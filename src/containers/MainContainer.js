@@ -3,11 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';
-<<<<<<< HEAD
-=======
 import GroupList from '../components/groups/GroupList';
 import Profile from '../components/profiles/Profile';
->>>>>>> develop
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
 
@@ -47,7 +44,6 @@ class MainContainer extends Component {
       <h1  className="welcome">Checkmate</h1>
 			<Switch>
       <Route exact path="/home" render={(props) => {
-<<<<<<< HEAD
         return <PostList posts={this.state.posts} comments={this.state.comments} users={this.state.users}/>
         }} />
         <Route exact path="/groups" component={GroupList} />
