@@ -2,9 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
-// import PostList from '../components/posts/PostList';
-// import NewsList from '../components/news/NewsList';
-//import CheckList from '../components/checks/CheckList';
+import PostList from '../components/posts/PostList';
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
 
@@ -41,10 +39,10 @@ class MainContainer extends Component {
       <Router>
       <Fragment>
       <NavBar />
-      <h1>CheckMate</h1>
+      <h1  className="welcome">Checkmate</h1>
 			<Switch>
-      <Route exact path="/" render={(props) => {
-        return <PostList posts={this.state.posts} comments={this.state.comments}/>
+      <Route exact path="/home" render={(props) => {
+        return <PostList posts={this.state.posts} comments={this.state.comments} users={this.state.users}/>
         }} />
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
@@ -55,8 +53,3 @@ class MainContainer extends Component {
   }
 }
 export default MainContainer;
-
-
-// <Route exact path="/" render={(props) => {
-// 	return <PostList posts={this.state.posts}/>
-// 	}} />

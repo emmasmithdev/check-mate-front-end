@@ -4,10 +4,10 @@ const NavBar = (props) => {
   return (
       <ul className="navBar">
       <li className="navLink">
-        <img className="logo" src="https://cdn3.iconfinder.com/data/icons/social-media-2115/512/27-512.png" alt="friend check logo"/>
+        <img className="logo" src="../images/panda2.png" alt="panda logo"/>
       </li>
         <li className="navLink">
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
         </li>
         <li className="navLink">
           <a href="/groups">My Groups</a>
