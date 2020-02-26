@@ -7,6 +7,7 @@ import GroupList from '../components/groups/GroupList';
 import Profile from '../components/profiles/Profile';
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
+import Logout from '../components/accounts/Logout';
 
 class MainContainer extends Component {
   constructor(props){
@@ -50,6 +51,7 @@ class MainContainer extends Component {
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/logout" component={Logout} />
 			</Switch>
       </Fragment>
       </Router>

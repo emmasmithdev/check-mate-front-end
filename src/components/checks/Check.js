@@ -10,14 +10,14 @@ const Check = (props) =>{
 	}
   return(
 		<Fragment>
-    <p>
+    <p className="check-detail">
     Name: <CheckUser user={props.check.author} userList={props.users} />
     </p>
-    <p>Sent To: <CheckUser user={props.check.recipient} userList={props.users}/></p>
-    <p>Message: {props.check.initialCheck}</p>
+    <p className="check-detail">Sent To: <CheckUser user={props.check.recipient} userList={props.users}/></p>
+    <p className="check-detail">Message: {props.check.initialCheck}</p>
 		<Link to={{
 			pathname: `/checks/reply/${props.check.author}`
-		}}><button>Reply!</button></Link>
+		}}><button className="send-check" >Reply!</button></Link>
     </Fragment>
   )
 }

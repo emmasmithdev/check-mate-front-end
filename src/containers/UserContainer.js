@@ -6,6 +6,7 @@ import MainContainer from './MainContainer';
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
 import Request from '../helpers/request';
+import Logout from '../components/accounts/Logout';
 
 class UserContainer extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class UserContainer extends Component {
 					<Route exact path="/home" component={MainContainer} />
 					<Route exact path="/checks" component={CheckContainer} />
 	        <Route exact path="/news" component={NewsContainer} />
+          <Route exact path="/logout" component={Logout} />
           </Switch>
         </Fragment>
       </Router>

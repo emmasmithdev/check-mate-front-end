@@ -11,7 +11,7 @@ const CheckList = (props) =>{
 
 	const listOfChecks = props.checks.map((check, index) => {
 		return(
-			<li key={index} className="component-item">
+			<li key={index} className="check-item">
 			<div className="component">
 			<Check check={check} users={props.users}/>
 			</div>
@@ -20,10 +20,11 @@ const CheckList = (props) =>{
 	});
   return(
 		<Fragment>
-		<ul className="component-list">
+		<h1 className="welcome">My Checks</h1>
+		<ul className="check-list">
 			{listOfChecks}
 		</ul>
-		<Link to="/checks/send"><button type="button">Send A Check</button></Link>
+		<Link to="/checks/send"><button className="send-check" type="button">Send A Check</button></Link>
 		</Fragment>
   )
 }

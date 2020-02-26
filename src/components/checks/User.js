@@ -9,11 +9,11 @@ const User = (props) =>{
 	}
   return(
 		<Fragment>
-    <p>Name: {props.user.name}</p>
-    <p>Username: {props.user.username}</p>
+    <p className="check-detail">Name: {props.user.name}</p>
+    <p className="check-detail">Username: {props.user.username}</p>
 		<Link to={{
 			pathname: `/checks/send/${props.user.id}`
-		}}><button type="button">Send A Check</button></Link>
+		}}><button className="send-check" type="button">Send A Check</button></Link>
     </Fragment>
   )
 }

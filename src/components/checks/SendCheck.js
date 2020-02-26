@@ -62,13 +62,15 @@ class SendCheck extends Component {
 
   	return (
 			<div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <img src="../../images/panda2.png" alt="panda pic" className="panda"/>
 			<form onSubmit={this.handleSubmit}>
-			<select name="check" onChange={this.handleCheck}>
+			<select className="check-message" name="check" onChange={this.handleCheck}>
 			<option disabled selected>Select a message!</option>
 			{messageOptions}
 			</select>
 			<br />
-			<button type="submit">Send!</button>
+			<button className="submit" type="submit">Send!</button>
 			</form>
 			</div>
 		)

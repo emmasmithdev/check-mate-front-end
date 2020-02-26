@@ -10,16 +10,15 @@ const UserList = (props) =>{
 
 	const listOfUsers = props.users.map((user, index) => {
 		return(
-			<li key={index} className="component-item">
-			<div className="component">
+			<li key={index} className="check-item">
 			<User user={user}/>
-			</div>
 			</li>
 		)
 	});
   return(
 		<Fragment>
-		<ul className="component-list">
+		<h1 className="welcome">Friends List</h1>
+		<ul className="check-list">
 			{listOfUsers}
 		</ul>
 		</Fragment>
