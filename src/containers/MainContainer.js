@@ -14,7 +14,8 @@ class MainContainer extends Component {
     this.state = {
       posts: [],
       users: [],
-      comments: []
+      comments: [],
+			user: this.props.match.params.user
     }
     // binds go here
   }
@@ -43,7 +44,7 @@ class MainContainer extends Component {
       <NavBar />
       <h1  className="welcome">Checkmate</h1>
 			<Switch>
-      <Route exact path="/home" render={(props) => {
+      <Route exact path="/home/:user" render={(props) => {
         return <PostList posts={this.state.posts} comments={this.state.comments} users={this.state.users}/>
         }} />
         <Route exact path="/groups" component={GroupList} />

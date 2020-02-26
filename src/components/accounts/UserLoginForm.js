@@ -40,20 +40,11 @@ class UserLoginForm extends Component {
       return window.alert("Error: password required");
     }
 
-		const auth = new AuthService();
+		this.props.onLogin(this.state.username, this.state.password)
 
-		auth.verifyUser(this.state.username, this.state.password)
-		.then((res) => {
-			if(res.status === 401) {
-					this.setState({
-						loginFailed: true
-					})
-			}
-			else if (res.status === 200) {
-				window.location = "/home"
-			}
+		this.setState({
+			loginFailed: true
 		})
-		.catch(err => console.log(err));
   }
 
   render() {
