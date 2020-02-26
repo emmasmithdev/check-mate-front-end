@@ -164,6 +164,14 @@ p.comment {
   font-size: 15px;
   margin-top: 8px;
 }
+.register {
+  font-family: 'Sarabun';
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 15px;
+  margin-top: 8px;
+}
 .save {
   font-family: 'Sarabun';
   font-weight: bold;

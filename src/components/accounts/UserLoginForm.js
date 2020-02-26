@@ -70,7 +70,7 @@ class UserLoginForm extends Component {
         <br/>
 	      <input type="submit" value="Submit" className="submit"/>
 	      </form>
-				<Link to="/register"><button type="button">Create An Account!</button></Link>
+				<Link to="/register"><button type="button" className="register">Create An Account!</button></Link>
 				{this.state.loginFailed && <div>Incorrect password or username!</div>}
 	    </div>
 		)
