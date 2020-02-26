@@ -70,6 +70,7 @@ class UserLoginForm extends Component {
 	      <input type="submit" value="Submit" className="submit"/>
 	      </form>
 				{this.state.loginFailed && <div>Incorrect password or username!</div>}
+        <a href="/register">Create Account</a>
 	    </div>
 		)
   }

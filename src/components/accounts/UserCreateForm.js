@@ -13,7 +13,7 @@ class UserCreateForm extends Component {
 
     this.handleName = this.handleName.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
-    this.handlePassword = this.Password.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
     this.handleProfilePicture = this.handleProfilePicture.bind(this);
     this.handleMood = this.handleMood.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -64,7 +64,6 @@ class UserCreateForm extends Component {
           <input type="text" name="" onChange={this.handlePassword}/>
           <label>Upload a Picture: </label>
           <input type="text" name="" onChange={this.handleProfilePicture}/>
-          // TODO: Drop down for mood enum?
           <label>How are you feeling? </label>
           <input type="text" name="" onChange={this.handleMood}/>
           <button type="submit">Create Account</button>
