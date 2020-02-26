@@ -7,6 +7,14 @@ const Post = (props) => {
   return "Loading..."
 }
 
+const userName = props.users.map((user, index) => {
+  if (user.id === props.post.user){
+  return (
+    <p key={index} className="userName">{user.name}</p>
+  )
+}
+})
+
 const comments = props.comments.map((comment, index) => {
   if (comment.postId === props.post.id){
   return (
@@ -22,7 +30,7 @@ const comments = props.comments.map((comment, index) => {
   return (
     <Fragment>
     <div className="postContents">
-      <p className="userName">{props.post.user}</p>
+      {userName}
       <p className="content">{props.post.content}</p>
     </div>
       <p className="date">{props.post.date}</p>
