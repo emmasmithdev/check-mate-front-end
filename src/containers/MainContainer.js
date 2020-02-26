@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import Request from '../helpers/request.js';
 import PostList from '../components/posts/PostList';
+import GroupList from '../components/groups/GroupList';
+import Profile from '../components/profiles/Profile';
 import CheckContainer from './CheckContainer';
 import NewsContainer from './NewsContainer';
 
@@ -44,8 +46,10 @@ class MainContainer extends Component {
       <Route exact path="/home" render={(props) => {
         return <PostList posts={this.state.posts} comments={this.state.comments}/>
         }} />
+        <Route exact path="/groups" component={GroupList} />
 				<Route exact path="/checks" component={CheckContainer} />
         <Route exact path="/news" component={NewsContainer} />
+        <Route exact path="/profile" component={Profile} />
 			</Switch>
       </Fragment>
       </Router>
@@ -53,8 +57,3 @@ class MainContainer extends Component {
   }
 }
 export default MainContainer;
-
-
-// <Route exact path="/" render={(props) => {
-// 	return <PostList posts={this.state.posts}/>
-// 	}} />
