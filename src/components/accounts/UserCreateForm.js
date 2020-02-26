@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/request';
 
 class UserCreateForm extends Component {
   constructor(props) {
@@ -7,15 +8,13 @@ class UserCreateForm extends Component {
       name: "",
       username: "",
       password: "",
-      profilePicture: "",
-      mood: ""
+      profilePicture: ""
     }
 
     this.handleName = this.handleName.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
-    this.handlePassword = this.Password.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
     this.handleProfilePicture = this.handleProfilePicture.bind(this);
-    this.handleMood = this.handleMood.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -35,20 +34,19 @@ class UserCreateForm extends Component {
     this.setState({profilePicture: event.target.value})
   }
 
-  handleMood(event) {
-    this.setState({mood: event.target.value})
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     const newUser = {
       name: this.state.name,
       username: this.state.username,
       password: this.state.password,
-      profilePicture: this.state.profilePicture,
-      mood: this.state.mood
+      profilePicture: this.state.profilePicture
     }
-    this.props.onPost(newUser)
+    const request = new Request();
+		request.post('/api/users', newUser)
+		.then(() => {
+			window.location = "/login"
+		})
   }
 
   render() {
@@ -61,12 +59,9 @@ class UserCreateForm extends Component {
           <label>Username: </label>
           <input type="text" name="" onChange={this.handleUsername}/>
           <label>Password: </label>
-          <input type="text" name="" onChange={this.handlePassword}/>
+          <input type="password" name="" onChange={this.handlePassword}/>
           <label>Upload a Picture: </label>
           <input type="text" name="" onChange={this.handleProfilePicture}/>
-          // TODO: Drop down for mood enum?
-          <label>How are you feeling? </label>
-          <input type="text" name="" onChange={this.handleMood}/>
           <button type="submit">Create Account</button>
         </form>
       </div>

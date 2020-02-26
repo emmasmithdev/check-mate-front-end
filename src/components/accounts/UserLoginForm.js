@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import AuthService from './AuthService';
 
 class UserLoginForm extends Component {
@@ -61,10 +62,13 @@ class UserLoginForm extends Component {
 	      <form onSubmit={this.handleSubmit}>
 	      <label>Username: </label>
 	      <input type="text" value={this.state.username} onChange={this.handleUsername}/>
-	      <label>Password: </label>
-	      <input type="text" value={this.state.password} onChange={this.handlePassword}/>
-	      <input type="submit" value="Submit"/>
+				<br />
+				<label>Password: </label>
+	      <input type="password" value={this.state.password} onChange={this.handlePassword}/>
+				<br />
+				<input type="submit" value="Submit"/>
 	      </form>
+				<Link to="/register"><button type="button">Register</button></Link>
 				{this.state.loginFailed && <div>Incorrect password or username!</div>}
 	    </div>
 		)
