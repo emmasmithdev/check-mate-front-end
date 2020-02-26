@@ -5,11 +5,13 @@ const NewsList = (props) => {
 
   const news = props.news.map((newsItem, index) => {
     return(
-      <li key={index} classname="component-item">
+      <div>
+      <li key={index} className="component-item">
         <div className="component">
           <NewsItem newsItem={newsItem}/>
         </div>
       </li>
+      </div>
     )
   });
 

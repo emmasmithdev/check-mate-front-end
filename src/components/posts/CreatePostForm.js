@@ -68,8 +68,11 @@ render(){
     <div className="postForm">
       <form onSubmit={this.handleSubmit}>
           <textarea className="postInput" rows="4" placeholder="How are you feeling today?" name="content" onChange={this.handleContent} value={this.state.content}></textarea>
+          <br/>
+          <div className="savePost">
           <GroupSelector groups={this.state.groups} onGroupSelected={this.handleGroupSelected} />
-          <br/><button type="submit">Save</button>
+          <button className="save" type="submit">Save</button>
+          </div>
       </form>
     </div>
   )

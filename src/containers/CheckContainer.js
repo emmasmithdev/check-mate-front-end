@@ -5,6 +5,7 @@ import UserList from '../components/checks/UserList';
 import SendCheck from '../components/checks/SendCheck';
 import ReplyCheck from '../components/checks/ReplyCheck';
 import Request from '../helpers/request';
+import NavBar from '../NavBar';
 
 class CheckContainer extends Component {
   constructor(props){
@@ -61,6 +62,7 @@ class CheckContainer extends Component {
     return(
       <Router>
         <Fragment>
+          <NavBar />
           <Switch>
 					<Route exact path="/checks/reply/:id" render={(props) => {
 						const id = props.match.params.id;

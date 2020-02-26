@@ -5,7 +5,7 @@ const NewsItem = (props) => {
     return "Loading News..."
   }
 
-  const newsTitle = props.newsItem.value[0];
+  const newsTitle = props.newsItem;
 
   return(
     <Fragment>
