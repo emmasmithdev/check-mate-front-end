@@ -33,11 +33,11 @@ class UserLoginForm extends Component {
     event.preventDefault();
 
     if (!this.state.username) {
-      console.log("Error: username required");
+      return window.alert('Error: Username required!')
     }
 
     if (!this.state.password) {
-      console.log("Error: password required");
+      return window.alert("Error: password required");
     }
 
 		const auth = new AuthService();
@@ -66,13 +66,12 @@ class UserLoginForm extends Component {
 	      <input type="text" value={this.state.username} onChange={this.handleUsername} className="inputBox"/>
         <br/>
 	      <label className="loginLabel">Password: </label>
-	      <input type="text" value={this.state.password} onChange={this.handlePassword} className="inputBox"/>
+	      <input type="password" value={this.state.password} onChange={this.handlePassword} className="inputBox"/>
         <br/>
 	      <input type="submit" value="Submit" className="submit"/>
 	      </form>
-				<Link to="/register"><button type="button">Register</button></Link>
+				<Link to="/register"><button type="button">Create An Account!</button></Link>
 				{this.state.loginFailed && <div>Incorrect password or username!</div>}
-        <a href="/register">Create Account</a>
 	    </div>
 		)
   }

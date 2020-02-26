@@ -1,4 +1,6 @@
 .body, html {
+	margin: 0;
+	padding: 0;
   background-image: url("https://webcomicms.net/sites/default/files/clipart/146256/blue-background-cliparts-146256-3397526.jpg");
   background-size: cover;
 }
@@ -181,6 +183,7 @@ p.comment {
   font-weight: bold;
   font-size: 40px;
   margin-left: -70px;
+	margin-top: 0;
 }
 img.panda {
   height: 150px;

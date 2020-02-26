@@ -13,7 +13,6 @@ const headers = {
 }
 
 app.get('/news', (req, res) => {
-<<<<<<< HEAD
   fetch("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/NewsSearchAPI?autoCorrect=false&pageNumber=1&pageSize=10&q=Happy&safeSearch=true", { method: 'GET', headers: headers})
   .then((jsonData) => {
     return jsonData.json()
