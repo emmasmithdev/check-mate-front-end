@@ -6,9 +6,7 @@ import Request from '../../helpers/request';
 class PostList extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      posts: []
-    }
+    
   }
 
   handlePost(post){
@@ -33,7 +31,7 @@ class PostList extends Component {
     <Fragment>
       <ul className="component-list">
         <CreatePostForm posts ={posts} onPost={this.handlePost}/>
-  	    {posts}
+  	    {posts.reverse()}
   	  </ul>
     </Fragment>
   )

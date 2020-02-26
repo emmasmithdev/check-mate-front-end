@@ -6,10 +6,8 @@ const NewsList = (props) => {
   const news = props.news.map((newsItem, index) => {
     return(
       <div>
-      <li key={index} className="component-item">
-        <div className="component">
+      <li key={index} className="news-item">
           <NewsItem newsItem={newsItem}/>
-        </div>
       </li>
       </div>
     )
@@ -17,7 +15,7 @@ const NewsList = (props) => {
 
   return(
     <Fragment>
-      <ul className="component-list">
+      <ul className="news-list">
         {news}
       </ul>
     </Fragment>

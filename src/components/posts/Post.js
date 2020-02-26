@@ -1,28 +1,42 @@
-import React, {Fragment} from 'react';
+import React, {Component, Fragment} from 'react';
 import Comment from './Comment';
-// import ReactionList from './ReactionList';
+import CommentForm from './CommentForm';
 
-const Post = (props) => {
-  if (!props.post){
-  return "Loading..."
-}
+class Post extends Component {
+  constructor(props){
+    super(props);
+    // this.state = {
+    //   users: [],
+    //   comments: [],
+    //   post: {}
+    // }
 
-const userName = props.users.map((user, index) => {
-  if (user.id === props.post.user){
+  }
+
+  handlePost(newComment){
+    const request = new Request();
+    request.post("/api/comments", newComment)
+    .then(() => window.location = '/home')
+  }
+
+  render(){
+
+    const comments = this.props.comments.map((comment, index) => {
+      if (comment.postId === this.props.post.id){
+      return (
+        <li key={index} className="comment-item">
+          <div  className="comment">
+            <Comment comment={comment} users={this.props.users}/>
+          </div>
+        </li>
+      )
+    }
+    })
+
+const userName = this.props.users.map((user, index) => {
+  if (user.id === this.props.post.user){
   return (
     <p key={index} className="userName">{user.name}</p>
-  )
-}
-})
-
-const comments = props.comments.map((comment, index) => {
-  if (comment.postId === props.post.id){
-  return (
-    <li key={index} className="comment-item">
-      <div  className="comment">
-        <Comment comment={comment} users={props.users}/>
-      </div>
-    </li>
   )
 }
 })
@@ -31,11 +45,13 @@ const comments = props.comments.map((comment, index) => {
     <Fragment>
     <div className="postContents">
       {userName}
-      <p className="content">{props.post.content}</p>
+      <p className="content">{this.props.post.content}</p>
     </div>
-      <p className="date">{props.post.date}</p>
-      {comments}
+      <p className="date">{this.props.post.date}</p>
+      <CommentForm userName={userName} postId={this.props.post.id} onPost={this.handlePost}/>
+      {comments.reverse()}
     </Fragment>
   )
+}
 }
 export default Post;

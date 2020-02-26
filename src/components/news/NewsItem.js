@@ -5,11 +5,12 @@ const NewsItem = (props) => {
     return "Loading News..."
   }
 
-  const newsTitle = props.newsItem;
 
   return(
     <Fragment>
-    <p>{newsTitle.title}</p>
+    <img className="news-img" src={props.newsItem.image.url} alt="news item pic"/>
+    <p className="newsTitle">{props.newsItem.title}</p>
+    <p className="newsBody">{props.newsItem.body}</p>
     </Fragment>
   )
 }

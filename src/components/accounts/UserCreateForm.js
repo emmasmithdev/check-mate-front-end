@@ -54,19 +54,26 @@ class UserCreateForm extends Component {
   render() {
 
     return(
-      <div>
+      <div className="create-user">
+        <p className="welcome">Checkmate</p>
+        <img src="../images/panda2.png" alt="panda pic" className="panda"/>
         <form onSubmit={this.handleSubmit}>
-          <label>Name: </label>
-          <input type="text" name="" onChange={this.handleName}/>
-          <label>Username: </label>
-          <input type="text" name="" onChange={this.handleUsername}/>
-          <label>Password: </label>
-          <input type="text" name="" onChange={this.handlePassword}/>
-          <label>Upload a Picture: </label>
-          <input type="text" name="" onChange={this.handleProfilePicture}/>
-          <label>How are you feeling? </label>
-          <input type="text" name="" onChange={this.handleMood}/>
-          <button type="submit">Create Account</button>
+          <label className="loginLabel">Name: </label>
+          <input type="text" name="" onChange={this.handleName} className="inputBox"/>
+          <br/>
+          <label className="loginLabel">Username: </label>
+          <input type="text" name="" onChange={this.handleUsername} className="inputBox"/>
+          <br/>
+          <label className="loginLabel">Password: </label>
+          <input type="text" name="" onChange={this.handlePassword} className="inputBox"/>
+          <br/>
+          <label className="loginLabel">Upload a Picture: </label>
+          <input type="text" name="" onChange={this.handleProfilePicture} className="inputBox"/>
+          <br/>
+          <label className="loginLabel">How are you feeling? </label>
+          <input type="text" name="" onChange={this.handleMood} className="inputBox"/>
+          <br/>
+          <button className="submit" type="submit">Create Account</button>
         </form>
       </div>
     )

@@ -61,9 +61,6 @@ handleGroupSelected(name) {
 
 render(){
 
-
-
-
   return (
     <div className="postForm">
       <form onSubmit={this.handleSubmit}>

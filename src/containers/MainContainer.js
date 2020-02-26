@@ -41,7 +41,7 @@ class MainContainer extends Component {
       <Router>
       <Fragment>
       <NavBar />
-      <h1  className="welcome">Checkmate</h1>
+      <h1  className="title">News Feed</h1>
 			<Switch>
       <Route exact path="/home" render={(props) => {
         return <PostList posts={this.state.posts} comments={this.state.comments} users={this.state.users}/>
